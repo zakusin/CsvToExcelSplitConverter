@@ -1,5 +1,11 @@
-﻿var csvFileName = Environment.GetCommandLineArgs()[1];
-var batchSize = Environment.GetCommandLineArgs()[2];
+﻿string? csvFileName = null;
+string? batchSize = null;
+
+if (Environment.GetCommandLineArgs().Length > 2)
+{
+    csvFileName = Environment.GetCommandLineArgs()[1];
+    batchSize = Environment.GetCommandLineArgs()[2];
+}
 
 if (string.IsNullOrWhiteSpace(csvFileName))
 {
