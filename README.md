@@ -1,5 +1,10 @@
 # CsvToExcelSplitConverter
 
+# 開發環境
+.NET 8 Console App
+
+Excel套件: [MiniExcel](https://github.com/mini-software/MiniExcel?tab=readme-ov-file#getstart1)
+
 # 使用方法
 ## 1. 直接開啟 CsvToExcelConverter.exe 檔
 ![image](https://github.com/zakusin/CsvToExcelSplitConverter/assets/7780280/4e9f4f60-d69f-4bf0-b1fe-333cd0a93237)
