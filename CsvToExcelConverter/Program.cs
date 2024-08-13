@@ -9,7 +9,7 @@ if (Environment.GetCommandLineArgs().Length > 2)
 
 if (string.IsNullOrWhiteSpace(csvFileName))
 {
-    Console.WriteLine("Enter the CSV file name:");
+    Console.WriteLine("Enter the file name with subFileName:");
     csvFileName = Console.ReadLine();
 }
 
@@ -19,7 +19,16 @@ if (string.IsNullOrWhiteSpace(batchSize))
     batchSize = Console.ReadLine();
 }
 
-CsvToExcelConverter.CsvToExcelConverter.ConvertCsvToExcel($"{csvFileName}.csv", int.Parse(batchSize));
+if (csvFileName.EndsWith(".csv"))
+{
+    CsvToExcelConverter.CsvToExcelConverter.SplitCsvFileBatchedToXlsx($"{csvFileName}", int.Parse(batchSize));
+
+}
+
+if (csvFileName.EndsWith("xlsx"))
+{
+    CsvToExcelConverter.CsvToExcelConverter.SplitXlsxFileBatchedToXlsx($"{csvFileName}", int.Parse(batchSize));
+}
 
 Console.WriteLine("Press any key to exit.");
 Console.ReadLine();
