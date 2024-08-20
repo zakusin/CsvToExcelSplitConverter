@@ -18,17 +18,7 @@ if (string.IsNullOrWhiteSpace(batchSize))
     Console.WriteLine("Enter the batch size:");
     batchSize = Console.ReadLine();
 }
-
-if (csvFileName.EndsWith(".csv"))
-{
-    CsvToExcelConverter.CsvToExcelConverter.SplitCsvFileBatchedToXlsx($"{csvFileName}", int.Parse(batchSize));
-
-}
-
-if (csvFileName.EndsWith("xlsx"))
-{
-    CsvToExcelConverter.CsvToExcelConverter.SplitXlsxFileBatchedToXlsx($"{csvFileName}", int.Parse(batchSize));
-}
+CsvToExcelConverter.CsvToExcelConverter.SplitExcelFileBatchedToXlsx($"{csvFileName}", int.Parse(batchSize));
 
 Console.WriteLine("Press any key to exit.");
 Console.ReadLine();
